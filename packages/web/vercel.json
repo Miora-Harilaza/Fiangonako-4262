@@ -5,6 +5,10 @@
     {
       "source": "/api/:path*",
       "destination": "https://fjkmant-769i684-preview-4200.runable.site/api/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
