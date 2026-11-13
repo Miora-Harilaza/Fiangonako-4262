@@ -1,6 +1,6 @@
 {
-  "buildCommand": "bun run build",
-  "outputDirectory": "dist",
+  "buildCommand": "bun run build:web",
+  "outputDirectory": "packages/web/dist",
   "rewrites": [
     {
       "source": "/api/:path*",
