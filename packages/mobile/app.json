@@ -1,8 +1,9 @@
 {
   "expo": {
+    "name": "FJKM Antsomafi",
     "icon": "./assets/icon.png",
     "android": {
-      "package": "com.appId.runable",
+      "package": "com.fjkm.antsomafi",
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
@@ -23,7 +24,6 @@
       "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
-    "name": "mobile",
     "slug": "mobile",
     "version": "1.0.0",
     "scheme": "runable-fjkmant-769i684",

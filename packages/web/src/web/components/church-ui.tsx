@@ -1,6 +1,16 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link, useLocation } from "wouter";
-import { ArrowUpRight, ArrowRight, Menu, X, MapPin, Clock, LockKeyhole, Cross } from "lucide-react";
+import {
+  ArrowUpRight,
+  ArrowRight,
+  Clock,
+  Cross,
+  Download,
+  LockKeyhole,
+  MapPin,
+  Menu,
+  X,
+} from "lucide-react";
 
 export function Logo({ light = false }: { light?: boolean }) {
   return (
@@ -73,6 +83,14 @@ export function Footer() {
             <br />
             Miara-manompo amin’ny fitiavana.
           </p>
+          <a
+            href="/downloads/fjkm-antsomafi.apk"
+            className="footer-download"
+            download
+          >
+            <Download size={16} />
+            Sintomy ny app Android
+          </a>
         </div>
         <div>
           <h4>Ny fiangonana</h4>

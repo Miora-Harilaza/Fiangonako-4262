@@ -1,5 +1,13 @@
 import { Link } from "wouter";
-import { ArrowUpRight, Clock, MapPin, HeartHandshake, BookOpen, Users, Cross } from "lucide-react";
+import {
+  ArrowUpRight,
+  BookOpen,
+  Clock,
+  Cross,
+  HeartHandshake,
+  MapPin,
+  Users,
+} from "lucide-react";
 import { Header, Footer, More, Invitation } from "../components/church-ui";
 import { EventList } from "../components/events";
 

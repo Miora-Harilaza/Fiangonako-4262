@@ -28,6 +28,10 @@ Site public en malagasy : `/`, `/momba`, `/hetsika`, `/vondrona`, `/toriteny`, `
    `bun --env-file=../../.env scripts/authorize-admin.ts ADRESSE_EMAIL`
 3. Le titulaire recharge `/admin`. Aucun compte n’est automatiquement administrateur. Il n’y a pas de route publique pour attribuer ce rôle.
 
+Pour créer et autoriser un compte administrateur initial en une étape, définissez temporairement `SEED_ADMIN_EMAIL`, `SEED_ADMIN_NAME` et `SEED_ADMIN_PASSWORD` dans l’environnement, puis exécutez depuis `packages/web` :
+`bun --env-file=../../.env scripts/seed-admin.ts`
+Le script ne change pas le mot de passe d’un compte déjà existant. Ne stockez pas le mot de passe dans le dépôt.
+
 ### Contenu à finaliser
 - Horaire fourni : 09h00 ; le jour reste à préciser.
 - Adresse fournie : Antsongo, Antsirabe ; le lien de carte cherche le quartier, pas un emplacement GPS vérifié.
@@ -38,3 +42,28 @@ Site public en malagasy : `/`, `/momba`, `/hetsika`, `/vondrona`, `/toriteny`, `
 
 ### Vérifications réalisées
 Compilation TypeScript/build, lint, navigation desktop/mobile, filtres d’événements, export ICS, lecture des textes et galerie, inscription email, protections API 401/403, ajout/modification/suppression événements et membres avec persistance. Les comptes et données de test sont supprimés. Le parcours Google est intégré au broker ; la connexion à un véritable compte Google doit être validée par son titulaire.
+
+
+
+
+
+
+
+
+
+
+
+
+
+$env:SEED_ADMIN_EMAIL = "admin@antsomafi.com"
+$env:SEED_ADMIN_NAME = "administrateur"
+$secure = Read-Host "kotobaba10" -AsSecureString
+$ptr = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($secure)
+try {
+  $env:SEED_ADMIN_PASSWORD = [Runtime.InteropServices.Marshal]::PtrToStringBSTR($ptr)
+  bun --env-file=../../.env scripts/seed-admin.ts
+} finally {
+  Remove-Item Env:SEED_ADMIN_PASSWORD -ErrorAction SilentlyContinue
+  [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($ptr)
+  $secure.Dispose()
+}

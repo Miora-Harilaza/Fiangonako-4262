@@ -832,6 +832,25 @@ select:focus {
   color: #a6b8a5;
   margin: 18px 0 0;
 }
+.footer-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 18px;
+  padding: 11px 15px;
+  border-radius: 999px;
+  background: var(--lime);
+  color: var(--forest);
+  font-size: 11px;
+  font-weight: 600;
+}
+.footer-download:hover {
+  background: #fff;
+  color: var(--forest);
+}
+.footer-download svg {
+  flex-shrink: 0;
+}
 .footer-top h4 {
   font-size: 11px;
   color: white;
